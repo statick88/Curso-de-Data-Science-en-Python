@@ -1,0 +1,62 @@
+---
+title: "Curso de Python para Data Science"
+subtitle: ""
+date: "today"
+author: "Lic. Diego Medardo Saavedra García Mg. Sc."
+lang: "es"
+format:
+  revealjs:
+    #chalkboard: 
+      #buttons: false
+    #toc: true
+    incremental: false
+    slide-number: true
+    preview-links: auto
+    logo: img/749316445319.png
+    #css: styles.css
+    footer: <https://abacom.edu.ec>
+    theme: dark
+    makeindex: true
+    #multiplex: true
+    transition: fade
+    chalkboard: true #Pizarra
+    auto-stretch: false
+    smaller: false
+    scrollable: true
+    presentation-title-slide-text-alig: left
+    presentation-slide-text-align: justify
+    menu: true
+  #html: 
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: false
+editor: visual
+execute: 
+  skipe: true
+    
+bibliography: Bibliografia.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+editor_options: 
+  chunk_output_type: console
+
+---
+
+1. Unidad 1.
+<a href="https://5t4t1ck.github.io/Curso-de-Data-Science-en-Python/Unidad%201/#/itle-slide">Tratamiento de datos</a>
+2. Unidad 2. 
+<a href="https://5t4t1ck.github.io/Curso-de-Data-Science-en-Python/Unidad%202/#/title-slide">Operadores y expresiones</a>
+3. Unidad 3
+<a href="https://abacom.q10.com/">Preparar y manejar datos para análisis y reportes (Data
+manipulation wrangling, munging)</a>
+4. Unidad 4
+<a href="https://abacom.q10.com/">Regresiones</a>
+5. Unidad 5
+<a href="https://abacom.q10.com/">Regularización L1 y L2 y Elastic Net</a>
+6. Unidad 6
+<a href="https://abacom.q10.com/">Forescast (Series de Tiempo)</a>
+7. Unidad 7
+<a href="https://abacom.q10.com/">Aprendizaje no supervizado Cluster y K-mens</a>
+8. Unidad 8
+<a href="https://abacom.q10.com/">Despliegue de modelos en producción</a>

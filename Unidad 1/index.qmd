@@ -1,0 +1,212 @@
+---
+title: "Introducción al Tratamiento de Datos con Python"
+subtitle: ""
+date: "today"
+author: "Lic. Diego Medardo Saavedra García Mg. Sc."
+lang: "es"
+format:
+  revealjs:
+    #chalkboard: 
+      #buttons: false
+    toc: true
+    incremental: false
+    slide-number: true
+    preview-links: auto
+    logo: img/749316445319.png
+    footer: <https://abacom.edu.ec>
+    theme: dark
+    makeindex: true
+    multiplex: true
+    transition: fade
+    chalkboard: true #Pizarra
+    auto-stretch: false
+    smaller: false
+    scrollable: true
+    presentation-title-slide-text-alig: left
+    presentation-slide-text-align: justify
+    menu: true
+  #html: 
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: false
+editor: visual
+execute: 
+  skipe: false
+    
+bibliography: Bibliografia.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+editor_options: 
+  chunk_output_type: console
+
+---
+
+# Objetivo de la clase
+- Enseñar a los estudiantes los conceptos básicos del tratamiento de datos con Python y las herramientas necesarias para importar y trabajar con datos desde diferentes fuentes.
+
+# Temas y subtemas
+
+## Introducción al tratamiento de datos
+
+- ¿Qué es el tratamiento de datos?
+- ¿Por qué es importante el tratamiento de datos?
+
+## Herramientas para el tratamiento de datos con Python
+
+- Introducción a Python 3
+- Jupyter Notebook y Spyder
+- Instalación de paquetes necesarios
+
+## Importar datos desde diferentes fuentes
+
+- Importar desde archivos csv
+- Importar desde archivos excel
+- Importar desde bases de datos
+
+## Trabajar con datos en Python
+
+- Tipos de datos en Python
+- Operaciones básicas con datos
+- Funciones de manipulación de datos en Python
+
+## Ejemplos de código.
+Ejercicio 1: Introducción a Python 3
+
+Crea un programa que imprima "¡Hola, mundo!" en la pantalla.
+
+Código:
+
+```{python}
+
+print("¡Hola, mundo!")
+
+```
+Ejercicio 2: Jupyter Notebook y Spyder
+
+Crea un archivo en Jupyter Notebook y otro en Spyder. En cada uno de ellos, escribe un programa que imprima "¡Hola, mundo!" en la pantalla.
+
+Código Jupyter Notebook:
+
+```{python}
+
+print("¡Hola, mundo!")
+
+```
+Código Spyder:
+
+```{python}
+
+print("¡Hola, mundo!")
+
+```
+Ejercicio 3: Instalación de paquetes necesarios
+
+Instala el paquete pandas utilizando pip. Luego, crea un archivo csv con algunos datos y usa el paquete pandas para leer y mostrar los datos en la pantalla.
+
+Código de instalación de pandas:
+```{bash}
+pip install pandas
+```
+Código de creación de archivo csv:
+
+```{python}
+
+import csv
+
+datos = [["Juan", "Pérez", 25],
+         ["María", "García", 30],
+         ["Pedro", "López", 40]]
+
+with open('datos.csv', 'w', newline='') as archivo:
+    escritor = csv.writer(archivo)
+    escritor.writerows(datos)
+```
+Código de lectura de archivo csv con pandas:
+
+```{python}
+
+import pandas as pd
+
+datos = pd.read_csv('datos.csv')
+print(datos)
+```
+Ejercicio 4: Importar desde archivos csv
+
+Crea un archivo csv con algunos datos y usa el paquete pandas para leer y mostrar los datos en la pantalla.
+
+Código de creación de archivo csv:
+
+```{python}
+import csv
+
+datos = [["Juan", "Pérez", 25],
+         ["María", "García", 30],
+         ["Pedro", "López", 40]]
+
+with open('datos.csv', 'w', newline='') as archivo:
+    escritor = csv.writer(archivo)
+    escritor.writerows(datos)
+```
+Código de lectura de archivo csv con pandas:
+
+```{python}
+import pandas as pd
+
+datos = pd.read_csv('datos.csv')
+print(datos)
+```
+Ejercicio 5: Importar desde archivos excel
+
+Crea un archivo excel con algunos datos y usa el paquete pandas para leer y mostrar los datos en la pantalla.
+
+Código de creación de archivo excel:
+
+```{python}
+import pandas as pd
+
+datos = [["Juan", "Pérez", 25],
+         ["María", "García", 30],
+         ["Pedro", "López", 40]]
+
+df = pd.DataFrame(datos, columns=['Nombre', 'Apellido', 'Edad'])
+df.to_excel('datos.xlsx', index=False)
+```
+Código de lectura de archivo excel con pandas:
+
+```{python}
+import pandas as pd
+
+datos = pd.read_excel('datos.xlsx')
+print(datos)
+```
+Ejercicio 6: Importar desde bases de datos
+
+Crea una base de datos SQLite con una tabla de clientes y algunos registros. Luego, usa el paquete pandas para leer los datos y mostrarlos en la pantalla.
+
+Código de creación de base de datos SQLite y tabla:
+
+```{python}
+import sqlite3
+
+conexion = sqlite3.connect('clientes.db')
+cursor = conexion.cursor()
+
+cursor.execute('''CREATE TABLE clientes
+                  (id INTEGER PRIMARY KEY,
+                   nombre TEXT,
+                   apellido TEXT,
+                   edad INTEGER)''')
+
+clientes = [('Juan', 'Pérez', 25),
+            ('María', 'García', 30),
+            ('Pedro', 'López', 40)]
+
+cursor.executemany
+```
+
+# Bibliografía:
+
+McKinney, W. (2018). Python para análisis de datos: Segunda edición. O'Reilly Media, Inc.
+VanderPlas, J. (2016). Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, Inc.
+Wesolowski, P. (2021). Data Wrangling with Python. Apress.
