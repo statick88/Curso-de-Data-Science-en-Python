@@ -1,0 +1,257 @@
+---
+title: "Operadores y expresiones"
+subtitle: ""
+date: "today"
+author: "Lic. Diego Medardo Saavedra García Mg. Sc."
+lang: "es"
+
+format:
+  revealjs:
+    #chalkboard: 
+      #buttons: false
+    toc: true
+    incremental: false
+    slide-number: true
+    preview-links: auto
+    logo: img/749316445319.png
+    footer: <https://abacom.edu.ec>
+    theme: dark
+    makeindex: true
+    multiplex: true
+    transition: fade
+    chalkboard: true #Pizarra
+    auto-stretch: false
+    smaller: false
+    scrollable: true
+    #presentation-title-slide-text-alig: left
+    presentation-slide-text-align: justify
+    menu: true
+    codeBlock: {data-trim: true}
+    execute: true
+    executeCode: true
+  #html: 
+    
+    #code-fold: true
+    #html-math-method: katex
+    #multiplex: true
+    #transition: fade
+    #auto-stretch: false
+bibliography: Bibliografia.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+editor_options: 
+  chunk_output_type: console
+---
+
+# Objetivo de la clase
+- Enseñar a los estudiantes sobre el uso de operadores, funciones, gestión de errores, manejo de fechas y horas, y conversiones en Python.
+
+# UNIDAD II: Operadores y expresiones
+
+## 2.1 Funciones
+
+### ¿Qué son las funciones?
+
+Ejemplo:
+  
+```python
+def saludar(nombre):
+    print("Hola " + nombre)
+```
+- Las funciones son bloques de código que realizan una tarea específica y que pueden ser reutilizados en diferentes partes del programa. 
+
+- Las funciones pueden tener parámetros de entrada y pueden devolver un valor de salida. En Python, las funciones se definen con la palabra clave ***def***, seguida del nombre de la función y sus parámetros, y finalmente el bloque de código que se ejecutará cuando se llame a la función.
+
+## 2.2 Gestión de errores
+
+- La gestión de errores es una técnica que permite al programador manejar los errores que pueden ocurrir durante la ejecución del programa. 
+
+- En Python, se pueden utilizar las excepciones para capturar errores y tomar medidas para solucionarlos. La gestión de errores permite mejorar la robustez y la fiabilidad del programa, y ayuda a evitar que el programa se detenga abruptamente ante errores inesperados.
+
+1. Manejo de excepciones básico
+
+```python
+try:
+    x = int(input("Ingresa un número: "))
+    y = int(input("Ingresa otro número: "))
+    resultado = x / y
+    print("El resultado de la división es: ", resultado)
+except ZeroDivisionError:
+    print("Error: No se puede dividir entre cero")
+except ValueError:
+    print("Error: Ingreso un valor inválido")
+```
+Este ejemplo muestra cómo utilizar la gestión de errores básica en Python. Se intenta dividir dos números ingresados por el usuario, pero se captura la excepción ZeroDivisionError si el segundo número es cero, y la excepción ValueError si los valores ingresados no son números enteros.
+
+2. Manejo de excepciones con mensajes personalizados
+
+```python
+def dividir(x, y):
+    try:
+        resultado = x / y
+    except ZeroDivisionError:
+        raise ValueError("No se puede dividir entre cero")
+    return resultado
+
+try:
+    a = int(input("Ingresa un número: "))
+    b = int(input("Ingresa otro número: "))
+    resultado = dividir(a, b)
+    print("El resultado de la división es: ", resultado)
+except ValueError as e:
+    print(e)
+
+```
+En este ejemplo, se define una función dividir que divide dos números y captura la excepción ***ZeroDivisionError*** si el segundo número es cero. 
+
+Si se captura esta excepción, se lanza una excepción personalizada ***ValueError*** con un mensaje personalizado. Luego, en el bloque ***try*** principal, se llama a la función dividir y se captura la excepción personalizada ***ValueError*** con un mensaje personalizado si se produce.
+
+3. Depuración de código con excepciones.
+  
+```python
+  def buscar_elemento(lista, elemento):
+    try:
+        indice = lista.index(elemento)
+    except ValueError:
+        return None
+    return indice
+
+mi_lista = [1, 2, 3, 4, 5]
+
+# Depuración de código: 
+# ¿qué pasa si se busca un elemento que no está en la lista?
+
+elemento = 6
+indice = buscar_elemento(mi_lista, elemento)
+if indice is None:
+    print("El elemento", elemento, "no se encuentra en la lista")
+else:
+    print("El elemento", elemento, "se encuentra en la posición", indice)
+```
+En este ejemplo, se define una función buscar_elemento que busca un elemento en una lista y devuelve su índice. 
+
+Si el elemento no se encuentra en la lista, se captura la excepción ***ValueError*** y se devuelve None. Luego, se utiliza esta función para buscar un elemento que no está en la lista y se realiza una depuración de código para detectar y manejar la excepción devuelta.
+
+## 2.3 Manejo de fechas y horas
+
+El manejo de fechas y horas es un tema importante en la programación, especialmente en aplicaciones que necesitan trabajar con fechas específicas. En Python, el módulo datetime proporciona una variedad de funciones para manejar fechas y horas. Los objetos datetime permiten realizar operaciones matemáticas y de comparación con fechas y horas, y se pueden utilizar para convertir fechas y horas entre diferentes formatos.
+
+Ejemplo:
+
+1. Manejo de fechas y horas
+  
+```python
+import datetime
+
+# Obtener la fecha y hora actual
+now = datetime.datetime.now()
+print("La fecha y hora actual es:", now)
+
+# Obtener la fecha actual
+today = datetime.date.today()
+print("La fecha actual es:", today)
+
+# Crear una fecha personalizada
+fecha = datetime.date(2023, 3, 28)
+print("La fecha personalizada es:", fecha)
+
+# Obtener el día de la semana de una fecha
+dia_semana = fecha.strftime("%A")
+print("El día de la semana para la fecha", fecha, "es:", dia_semana)
+
+# Obtener la diferencia entre dos fechas
+otra_fecha = datetime.date(2023, 3, 20)
+diferencia = fecha - otra_fecha
+print("La diferencia entre", fecha, "y", otra_fecha, "es de", diferencia.days, "días")
+
+```
+En este ejemplo, se muestra cómo utilizar la biblioteca datetime de Python para trabajar con fechas y horas. Se puede obtener la fecha y hora actual, la fecha actual, crear una fecha personalizada y obtener información específica de una fecha, como el día de la semana. También se puede calcular la diferencia entre dos fechas.
+
+## 2.4 Uso de operadores
+
+Los operadores son símbolos que se utilizan en Python para realizar operaciones aritméticas y de comparación. Los operadores aritméticos permiten realizar operaciones matemáticas básicas, mientras que los operadores de comparación se utilizan para comparar valores y determinar si una condición es verdadera o falsa. En Python, también se pueden utilizar operadores lógicos para combinar condiciones y formar expresiones complejas.
+
+1. Uso de operadores
+
+```python
+# Operadores aritméticos
+a = 10
+b = 3
+print("a + b =", a + b)
+print("a - b =", a - b)
+print("a * b =", a * b)
+print("a / b =", a / b)
+print("a % b =", a % b)
+print("a ** b =", a ** b)
+
+# Operadores de comparación
+x = 5
+y = 7
+print("x == y es", x == y)
+print("x != y es", x != y)
+print("x < y es", x < y)
+print("x > y es", x > y)
+print("x <= y es", x <= y)
+print("x >= y es", x >= y)
+
+# Operadores lógicos
+p = True
+q = False
+print("p and q es", p and q)
+print("p or q es", p or q)
+print("not p es", not p)
+
+# Operadores de asignación
+c = 10
+c += 5
+print("c += 5 es", c)
+c -= 3
+print("c -= 3 es", c)
+c *= 2
+print("c *= 2 es", c)
+c /= 4
+print("c /= 4 es", c)
+c %= 2
+print("c %= 2 es", c)
+```
+En este ejemplo, se muestra cómo utilizar diferentes tipos de operadores en Python. Se pueden utilizar operadores aritméticos para realizar operaciones matemáticas básicas, operadores de comparación para comparar valores y obtener valores booleanos, operadores lógicos para combinar valores booleanos y operadores de asignación para asignar valores a variables con una sintaxis simplificada.
+
+## 2.5 Conversiones
+
+Las conversiones son necesarias en muchas aplicaciones para convertir entre diferentes tipos de datos y unidades de medida. En Python, se pueden
+
+1. Conversión de tipos de datos:
+
+```python
+# Convertir un número entero en un número de punto flotante
+entero = 10
+flotante = float(entero)
+print(flotante)  # Salida: 10.0
+
+# Convertir una cadena en un número entero
+cadena_entero = "20"
+entero = int(cadena_entero)
+print(entero)  # Salida: 20
+
+# Convertir una cadena en un número de punto flotante
+cadena_flotante = "3.14"
+flotante = float(cadena_flotante)
+print(flotante)  # Salida: 3.14
+
+# Convertir un número en una cadena
+numero = 42
+cadena = str(numero)
+print(cadena)  # Salida: "42"
+```
+En este ejemplo, se utilizan las funciones int(), float(), y str() para convertir un número entero en un número de punto flotante, una cadena en un número entero, una cadena en un número de punto flotante, y un número en una cadena, respectivamente.
+
+Estas funciones son muy útiles para realizar conversiones de tipos de datos en Python y se utilizan comúnmente en programas para manipular datos y realizar cálculos.
+
+¡Gracias por su atención!
+
+
+
+# Bibliografía
+
+- Python documentation. (https://docs.python.org/)
+- Learning Python, 5th Edition. (https://www.oreilly.com/library/view/learning-python-5th/9781491917216/)
+- Python Crash Course, 2nd Edition. (https://www.oreilly.com/library/view/python-crash-course/9781492071266/)
