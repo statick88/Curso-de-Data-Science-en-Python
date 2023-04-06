@@ -1,0 +1,7 @@
+name: py311
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - numpy
+prefix: /home/statick/anaconda3/envs/py311
