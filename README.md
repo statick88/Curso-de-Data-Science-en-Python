@@ -1,176 +1,305 @@
-Instalar Pandas en caso de que no tenga instalada la biblioteca Pandas en su sistema, puede instalarla utilizando el siguiente comando en su terminal o entorno de Python:
+```python
+import pandas as pd
+
+datos = {
+    'Provincia': ['Los Rios', 'Manabi', 'Chimborazo', 'Bolivar', 'Napo'],
+    'Ciudad': ['Loja', 'Zamora', 'Santa Elena', 'Santa Elena', 'Loja'],
+    'Edad': [39, 19, 57, 65, 60],
+    'Ingreso': [4747.327188, 2952.323734, 4604.464213, 3712.333082, 2214.344243],
+    'Genero': ['Masculino', 'Masculino', 'Masculino', 'Femenino', 'Otro']
+}
+
+df = pd.DataFrame(datos)
+
+df.to_csv('datos2.csv', index=False)
+df.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Provincia</th>
+      <th>Ciudad</th>
+      <th>Edad</th>
+      <th>Ingreso</th>
+      <th>Genero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Los Rios</td>
+      <td>Loja</td>
+      <td>39</td>
+      <td>4747.327188</td>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Manabi</td>
+      <td>Zamora</td>
+      <td>19</td>
+      <td>2952.323734</td>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Chimborazo</td>
+      <td>Santa Elena</td>
+      <td>57</td>
+      <td>4604.464213</td>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bolivar</td>
+      <td>Santa Elena</td>
+      <td>65</td>
+      <td>3712.333082</td>
+      <td>Femenino</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Napo</td>
+      <td>Loja</td>
+      <td>60</td>
+      <td>2214.344243</td>
+      <td>Otro</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
-!pip install pandas
+import pandas as pd
+import numpy as np
+
+# Generar datos aleatorios
+np.random.seed(123)
+n = 5
+provincias = ['Azuay', 'Guayas', 'Pichincha', 'Manabi', 'Esmeraldas']
+ciudades = ['Cuenca', 'Guayaquil', 'Quito', 'Portoviejo', 'Esmeraldas']
+edades = np.random.randint(18, 80, n)
+ingresos = np.random.normal(loc=5000, scale=1000, size=n)
+generos = ['Masculino', 'Femenino', 'Masculino', 'Femenino', 'Otro']
+
+# Crear DataFrame y guardar como CSV
+datos = {
+    'Provincia': provincias,
+    'Ciudad': ciudades,
+    'Edad': edades,
+    'Ingreso': ingresos,
+    'Genero': generos
+}
+df = pd.DataFrame(datos)
+df.to_csv('datos3.csv', index=False)
+df.head()
 ```
 
-    Defaulting to user installation because normal site-packages is not writeable
-    Requirement already satisfied: pandas in /home/statick/.local/lib/python3.11/site-packages (1.5.3)
-    Requirement already satisfied: python-dateutil>=2.8.1 in /usr/lib/python3.11/site-packages (from pandas) (2.8.2)
-    Requirement already satisfied: pytz>=2020.1 in /home/statick/.local/lib/python3.11/site-packages (from pandas) (2023.2)
-    Requirement already satisfied: numpy>=1.21.0 in /home/statick/.local/lib/python3.11/site-packages (from pandas) (1.24.2)
-    Requirement already satisfied: six>=1.5 in /usr/lib/python3.11/site-packages (from python-dateutil>=2.8.1->pandas) (1.16.0)
 
 
-Importar Pandas y cargar el archivo de Excel
-Primero, debemos importar la biblioteca Pandas y cargar el archivo de Excel en un objeto de marco de datos. Puede hacerlo con el siguiente código:
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Provincia</th>
+      <th>Ciudad</th>
+      <th>Edad</th>
+      <th>Ingreso</th>
+      <th>Genero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Azuay</td>
+      <td>Cuenca</td>
+      <td>63</td>
+      <td>4926.486320</td>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Guayas</td>
+      <td>Guayaquil</td>
+      <td>20</td>
+      <td>6814.032774</td>
+      <td>Femenino</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Pichincha</td>
+      <td>Quito</td>
+      <td>46</td>
+      <td>4558.002389</td>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Manabi</td>
+      <td>Portoviejo</td>
+      <td>52</td>
+      <td>6389.511423</td>
+      <td>Femenino</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Esmeraldas</td>
+      <td>Esmeraldas</td>
+      <td>56</td>
+      <td>3922.534666</td>
+      <td>Otro</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
 import pandas as pd
 
-# Cargar archivo Excel en un DataFrame de Pandas
-df = pd.read_excel("datos.xlsx")
+# Carga y lectura de datos con Pandas
+datos2 = pd.read_csv('datos2.csv')
+datos3 = pd.read_csv('datos3.csv')
 
 ```
-
-Explorar los datos
-Ahora, puede explorar los datos cargados en el objeto de marco de datos utilizando varias funciones de Pandas. Por ejemplo, puede imprimir las primeras filas de datos utilizando la función head():
 
 
 ```python
-# Imprimir las primeras 5 filas del DataFrame
-print(df.head())
+# Conteo de valores únicos en la columna "Genero" para datos2
+datos2["Genero"].value_counts()
+
 ```
 
-           FECHA  ANIO  MES  CODIGO CLIENTE CANAL  COD_ITEM  \
-    0 2021-10-08  2021   10         7767359   PDV     50785   
-    1 2022-01-21  2022    1         8522244   PDV     30253   
-    2 2021-12-30  2021   12         7482712   PDV    103961   
-    3 2022-09-15  2022    9         6005545   PDV     92243   
-    4 2022-07-20  2022    7         6627039   PDV      5757   
-    
-                   NOMBRE_PRODUCTO            NOMBRE_CATEGORIA  \
-    0                 CEPILLOS B&C  IMPLEMENTOS DE CABELLO B&C   
-    1      DELINEADOR OJOS ESSENCE              COSMETICO UÑAS   
-    2                   HANUTA B&C         COLACIONES Y SNACKS   
-    3          PAPAS PRINGLES B&C.                    CONFITES   
-    4  VITAMIN CHOICE ANTIOXIDANTE                 SUPLEMENTOS   
-    
-      NOMBRE_TIPO_NEGOCIO  COD_LOCAL              NOMBRE_LOCAL NOMBRE_PROVINCIA  \
-    0                 B&C        791  FYBECA MALL DE LOS ANDES       TUNGURAHUA   
-    1                B&CP         95         FYBECA LOS MANGOS           MANABÍ   
-    2                 B&C       1271  FYBECA SAN LUIS SHOPPING        PICHINCHA   
-    3                 B&C      71840        FYBECA LOS FRESNOS        PICHINCHA   
-    4                 B&C       1901              FYBECA SCALA        PICHINCHA   
-    
-      NOMBRE_CIUDAD  NÚMERO DE TRANSACCIÓN  VENTA_NETA  MARGEN  CANTIDAD  \
-    0        AMBATO                3810852           7       2         1   
-    1    PORTOVIEJO                5962659           9       2         1   
-    2         QUITO                3485885          11       2         2   
-    3         QUITO                4209849          18       2         1   
-    4         QUITO                6412586           7       2         1   
-    
-       COD FORMA DE PAGO  
-    0                  1  
-    1                  1  
-    2                  3  
-    3                  5  
-    4                  5  
 
 
-    Ejercicios
-    A continuación, se muestran algunos ejercicios para trabajar con los datos en el objeto de marco de datos:
 
-    Ejercicio 1: ¿Cuántas transacciones se realizaron en total?
+    Masculino    3
+    Femenino     1
+    Otro         1
+    Name: Genero, dtype: int64
 
-
-```python
-# Contar el número de transacciones
-num_transacciones = df["NÚMERO DE TRANSACCIÓN"].count()
-print("El número total de transacciones es:", num_transacciones)
-```
-
-    El número total de transacciones es: 49999
-
-
-Ejercicio 2: ¿Cuál es el monto total de ventas netas?
-
-
-```python
-# Calcular el monto total de ventas netas
-monto_ventas = df["VENTA_NETA"].sum()
-print("El monto total de ventas netas es:", monto_ventas)
-```
-
-    El monto total de ventas netas es: 624812
 
 
 
 ```python
-# Contar las ventas por nombre de producto
-ventas_por_producto = df.groupby("NOMBRE_PRODUCTO")["CANTIDAD"].sum()
-
-# Obtener el nombre del producto más vendido
-nombre_producto_mas_vendido = ventas_por_producto.idxmax()
-
-print("El nombre del producto más vendido es:", nombre_producto_mas_vendido)
+# Conteo de valores únicos en la columna "Genero" para datos3
+datos3["Genero"].value_counts()
 
 ```
 
-    El nombre del producto más vendido es: EUTIROX.
 
 
-Ejercicio 4: ¿Cuál es la cantidad total de cada producto vendido?
+
+    Masculino    2
+    Femenino     2
+    Otro         1
+    Name: Genero, dtype: int64
+
+
 
 
 ```python
-# Calcular la cantidad total de cada producto vendido
-cantidad_por_producto = df.groupby("NOMBRE_PRODUCTO")["CANTIDAD"].sum()
-
-print("Cantidad total de cada producto vendido:")
-print(cantidad_por_producto)
+# Combinación y unión de datos
+datos = pd.concat([datos2, datos3])
 
 ```
-
-    Cantidad total de cada producto vendido:
-    NOMBRE_PRODUCTO
-    102 VITAMINA C+ZINC         120
-    ABANIX                      430
-    ABC DERM JABON LIQUIDO._     10
-    ABRILAR                     134
-    ACCES MAQUILLA FREESTYLE     10
-                               ... 
-    ZOVIRAX                      10
-    ZURCAL                      160
-    ZYRTEC                      300
-    ZYRTEC-D                    110
-    ZYRTEC-D.                    71
-    Name: CANTIDAD, Length: 1987, dtype: int64
-
-
-    Ejercicio 5: ¿Cuánto margen se obtuvo por provincia?
 
 
 ```python
-# Calcular el margen total por provincia
-margen_por_provincia = df.groupby("NOMBRE_PROVINCIA")["MARGEN"].sum()
-
-print("Margen total por provincia:")
-print(margen_por_provincia)
+# Verificar si hay valores nulos
+datos.isnull().sum()
 
 ```
 
-    Margen total por provincia:
-    NOMBRE_PROVINCIA
-    AZUAY                              6216
-    BOLÍVAR                             104
-    CARCHI                              114
-    CHIMBORAZO                          979
-    COTOPAXI                           1244
-    EL ORO                             2292
-    ESMERALDAS                         1728
-    GUAYAS                            33600
-    IMBABURA                           2464
-    LOJA                               2084
-    LOS RÍOS                            325
-    MANABÍ                             5652
-    NAPO                                331
-    ORELLANA                            410
-    PICHINCHA                         60977
-    SANTA ELENA                        1422
-    SANTO DOMINGO DE LOS TSÁCHILAS      990
-    SUCUMBÍOS                           513
-    TUNGURAHUA                         2924
-    Name: MARGEN, dtype: int64
+
+
+
+    Provincia    0
+    Ciudad       0
+    Edad         0
+    Ingreso      0
+    Genero       0
+    dtype: int64
+
+
+
+
+```python
+media_por_provincia = datos.groupby('Provincia')['Ingreso'].mean()
+print(media_por_provincia)
+
+```
+
+    Provincia
+    Azuay         4926.486320
+    Bolivar       3712.333082
+    Chimborazo    4604.464213
+    Esmeraldas    3922.534666
+    Guayas        6814.032774
+    Los Rios      4747.327188
+    Manabi        4670.917579
+    Napo          2214.344243
+    Pichincha     4558.002389
+    Name: Ingreso, dtype: float64
+
+
+
+```python
+datos = pd.merge(datos2, datos3, how='outer')
+```
+
+
+```python
+suma_por_ciudad = datos.groupby('Ciudad')['Ingreso'].sum()
+print(suma_por_ciudad)
+```
+
+    Ciudad
+    Cuenca         4926.486320
+    Esmeraldas     3922.534666
+    Guayaquil      6814.032774
+    Loja           6961.671431
+    Portoviejo     6389.511423
+    Quito          4558.002389
+    Santa Elena    8316.797295
+    Zamora         2952.323734
+    Name: Ingreso, dtype: float64
