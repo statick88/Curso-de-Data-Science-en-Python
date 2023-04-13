@@ -1,4 +1,4 @@
-Curso de Data Science
+# Curso de Data Science
 
 Este es un curso de Data Science que cubre los temas fundamentales para el análisis y modelado de datos. El curso está diseñado para principiantes que desean aprender sobre análisis de datos, preparación de datos, modelado y despliegue de modelos.
 Unidad I: Tratamiento de datos
