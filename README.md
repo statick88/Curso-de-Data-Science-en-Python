@@ -84,7 +84,7 @@ Esta unidad cubre el despliegue de modelos en producción. Los temas cubiertos s
 
 - Desarrollo y empaquetado de modelos de ML
 - Introducción al despliegue de modelos de ML
-- [Código]()
+- [Código](https://github.com/5t4t1ck/Curso-de-Data-Science-en-Python/blob/master/Code/Unidad%208/Despliegue%20de%20modelos%20en%20producci%C3%B3n.ipynb)
 
 ## Recursos adicionales
 
