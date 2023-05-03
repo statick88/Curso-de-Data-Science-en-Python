@@ -11,9 +11,9 @@ Este curso muestra modelos de datos en Jupyter Notebook a traves de entornos vir
 
 ## Unidad I: Tratamiento de datos
 
-Esta unidad está enfocada en la introducción a Python, Jupyter y Syder, y cómo importar datos desde diferentes fuentes. Los temas cubiertos son:
+Esta unidad está enfocada en la introducción a Python, Jupyter y Spyder, y cómo importar datos desde diferentes fuentes. Los temas cubiertos son:
 
-- Introducción a Python, Jupyter y Syder
+- Introducción a Python, Jupyter y Spyder
 - Importar desde csv, excel, bases de datos
 - [Código](https://github.com/5t4t1ck/Curso-de-Data-Science-en-Python/tree/master/Code/Unidad%201)
 
